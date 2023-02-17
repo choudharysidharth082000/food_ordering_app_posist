@@ -107,8 +107,17 @@
 .font-size-md {
   font-size: 1rem;
 }
+.font-size-md-custom {
+  font-size: 0.9rem;
+}
 .font-size-lg {
   font-size: 1.2rem;
+}
+.outline-none{
+  outline: none;
+}
+.border-none{
+  border: none;
 }
 .font-size-xl {
   font-size: 1.4rem;
