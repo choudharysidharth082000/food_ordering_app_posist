@@ -107,6 +107,9 @@
 .font-size-md {
   font-size: 1rem;
 }
+.w-85{
+    width: 85%;
+}
 .font-size-md-custom {
   font-size: 0.9rem;
 }
@@ -163,4 +166,21 @@
 }
 .rounded-xl {
   border-radius: 0.8rem;
+}
+.containorSecondDashboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 400px;
+}
+.containorFirst{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 400px;
+  width: 700px;
 }
