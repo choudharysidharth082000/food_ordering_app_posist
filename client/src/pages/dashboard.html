@@ -1,7 +1,8 @@
 <div
   class="containorDashBoard w-100 d-flex justify-content-start align-items-center bg-light"
+  ng-controller="dashboardController"
 >
-  <div class="sidebar w-15 h-screen bg-white">
+  <div class="sidebar w-20 h-screen bg-white">
     <div
       class="containorLogo w-100 px-5 py-4 d-flex justify-content-start align-items-center"
     >
@@ -12,36 +13,19 @@
     >
       <p class="text-muted">Main Menu</p>
       <!-- <button class="btn btn-dark w-100 oy-3">Users</button>      -->
-      <a
-        href="#"
-        class="py-3 px-4 w-100 bg-dark text-white rounded-md text-decoration-none my-2 font-size-md"
-        ><span class="text-white px-2"
-          ><i class="fa-solid fa-table-columns"></i
-        ></span>
-        Users</a
+      <div
+        class="containorItems d-flex justify-content-start align-items-center flex-column w-full"
+        ng-repeat="entry in admin"
       >
-      <a
-        href="#"
-        class="py-3 px-4 w-100 bg-light text-dark rounded-md text-decoration-none my-2 font-size-md"
-        ><span class="text-dark px-2"
-          ><i class="fa-solid fa-table-columns"></i
-        ></span>
-        Campaigning</a
-      >
-      <a
-        href="#"
-        class="py-3 px-4 w-100 bg-light text-dark rounded-md text-decoration-none my-2 font-size-md"
-        ><span class="text-dark px-2"
-          ><i class="fa-solid fa-lightbulb"></i
-        ></span>
-        Performance</a
-      >
-      <a
-        href="#"
-        class="py-3 px-4 w-100 bg-light text-dark rounded-md text-decoration-none my-2 font-size-md"
-        ><span class="text-dark px-2"><i class="fa-solid fa-wallet"></i></span>
-        My Wallet</a
-      >
+        <a
+        ui-sref="{{entry.link}}"
+          ng-click="changeActiveStateDashboard(entry.number)"
+          class="py-3 px-4 w-100 bg-light text-dark rounded-md  my-2 font-size-md cursor-pointer text-decoration-none"
+          ng-class="entry.isActive ? 'bg-dark text-white' : 'text-dark'"
+          ><span class="text-dark px-2"><i ng-class="entry.icon"></i></span>
+          {{entry.name}}</a
+        >
+      </div>
     </div>
     <div
       class="containorPreferences w-full d-flex px-5 mt-4 justify-content-start align-items-start flex-column"
@@ -83,5 +67,5 @@
       >
     </div>
   </div>
-  <ui-view class="w-85"></ui-view>
+  <ui-view class="w-80"></ui-view>
 </div>

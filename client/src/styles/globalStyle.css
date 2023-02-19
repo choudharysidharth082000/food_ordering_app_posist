@@ -21,6 +21,10 @@
 .w-20 {
   width: 20%;
 }
+.w-25
+{
+    width: 25%;
+}
 .w-30 {
   width: 30%;
 }
@@ -88,7 +92,11 @@
   padding: 0 20px;
 }
 .shadow-sm {
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 .shadow-md-smooth {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -155,6 +163,16 @@
 .font-family-tertiary {
   font-family: "Lato", sans-serif;
 }
+.secondCardInfo{
+  height: 60px;
+}
+.rounded-circle{
+  border-radius: 50%;
+}
+.imageProfile{
+  width: 80px;
+  height: 80px;
+}
 .rounded-sm {
   border-radius: 0.2rem;
 }
@@ -183,4 +201,21 @@
   padding: 0 20px;
   height: 400px;
   width: 700px;
+}
+
+.containorFirstAnalytics{
+  height: 300px;
+}
+.containorSecondAnalytics{
+  height: 305px;
+}
+
+.firstAnalytics, .secondAnalytics, .thirdAnalytics, .fourthAnalytics{
+  height: 130px;
+}
+.containor2{
+  height: 420px;
+}
+.imageCarousel{
+  height: 280px;
 }

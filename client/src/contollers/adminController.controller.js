@@ -7,6 +7,13 @@ const adminController = myapp.controller(
     $scope.email = "";
     $scope.password = "";
 
+    $scope.sampleClick = function ()
+    {
+      console.log("Hello world");
+      console.log($location);
+      $location.path("/dashboard");
+    }
+
     $scope.loginClick = function ($event) {
       $event.preventDefault();
 
@@ -15,7 +22,9 @@ const adminController = myapp.controller(
         .then(function (response) {
           console.log(response);
           if (response.data.status === true) {
-            $location.path("/dashboard");
+            console.log("Enterigg the location call");
+            location.href = "/index.html#!/dashboard";
+            console.log("Close");
           } else {
             alert("Invalid credentials");
           }

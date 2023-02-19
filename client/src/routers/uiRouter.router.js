@@ -19,6 +19,10 @@ myapp.config(function ($stateProvider, $urlRouterProvider) {
       url: "/users",
       templateUrl: "src/pages/dashboard/user.html",
     })
+    .state("dashboard.brands", {
+      url: "/brands",
+      templateUrl: "src/pages/dashboard/brand.html",
+      })
     .state("dashboard.campaign", {
       url: "/campaign",
       templateUrl: "src/pages/dashboard/campaign.html",
