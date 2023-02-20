@@ -15,7 +15,7 @@
       <!-- <button class="btn btn-dark w-100 oy-3">Users</button>      -->
       <div
         class="containorItems d-flex justify-content-start align-items-center flex-column w-full"
-        ng-repeat="entry in admin"
+        ng-repeat="entry in navbar"
       >
         <a
         ui-sref="{{entry.link}}"
@@ -59,6 +59,7 @@
       >
       <a
         href="#"
+        onclick="logout()"
         class="py-3 px-4 w-100 bg-light text-dark rounded-md text-decoration-none my-2 font-size-md"
         ><span class="text-dark px-2"
           ><i class="fa-solid fa-user-circle"></i

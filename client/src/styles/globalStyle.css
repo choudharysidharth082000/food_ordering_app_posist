@@ -219,3 +219,13 @@
 .imageCarousel{
   height: 280px;
 }
+.simple-Table{
+  height: 600px;
+  overflow-y: scroll;
+}
+
+.simple-Table::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+

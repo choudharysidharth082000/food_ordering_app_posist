@@ -23,6 +23,8 @@ const adminController = myapp.controller(
           console.log(response);
           if (response.data.status === true) {
             console.log("Enterigg the location call");
+            localStorage.setItem("token", response.data.data.userType);
+            // localStorage.setItem("userType", response.data.userType);
             location.href = "/index.html#!/dashboard";
             console.log("Close");
           } else {
