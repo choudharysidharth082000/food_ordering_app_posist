@@ -1,0 +1,285 @@
+<div
+  class="w-100 d-flex justify-content-center align-items-center bg-light flex-column position-relative"
+  ng-controller="userOrderController"
+>
+  <div
+    class="selectCome h-screen w-70 p-3 d-flex justify-content-around align-items-center"
+  >
+    <div
+      class="card1Kiosk shadow-sm d-flex justify-content-center align-items-center flex-column rounded-md cursor-pointer"
+      ng-click="changeOrderType('takeout', 0, 990)"
+    >
+      <div
+        class="imageContainor w-100 d-flex justify-content-center align-items-center p-2"
+      >
+        <img class="imageCardKiosk" src="/public/5661438.jpg" alt="" />
+      </div>
+      <h4 class="text-darkGray">Take Out</h4>
+    </div>
+    <div
+      class="card1Kiosk shadow-sm d-flex justify-content-center align-items-center flex-column rounded-md cursor-pointer"
+      ng-click="changeOrderType('dinein', 0)"
+    >
+      <div
+        class="imageContainor w-100 d-flex justify-content-center align-items-center p-2"
+      >
+        <img class="imageCardKiosk" src="/public/11174.jpg" alt="" />
+      </div>
+      <!-- Heading Stylish  -->
+      <h4 class="text-darkGray">Eat In</h4>
+    </div>
+  </div>
+
+  <div
+    class="containorSample bg-white w-100 d-flex justify-content-start align-items-center flex-column"
+  >
+    <div
+      class="contaninorInnerWrapper w-100 d-flex justify-content-start align-items-center my-2 position-relative"
+    >
+      <div class="containor1KioskPreview w-70 bg-white">
+        <div
+          class="navbar w-100 p-3 px-5 py-3 d-flex justify-content-start align-items-center"
+        >
+          <img
+            class="logoImage"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+            alt=""
+          />
+        </div>
+        <div
+          class="header w-100 p-2 d-flex justify-content-start mt-3 flex-column"
+        >
+          <!-- <div class="containorCategories w-30 h-screen bg-danger"></div> -->
+
+          <div class="containorMiddle w-80 p-3 m-auto">
+            <h1
+              class="text-main-heading font-weight-bold text-dark font-size-xxxl text-dark mx-3"
+            >
+              Hey,
+            </h1>
+            <h2 class="kyonkSubHeading text-dark font-size-xxxl mx-3">
+              What's up?
+            </h2>
+
+            <div class="containorCards w-100 d-flex py-3 d-flex flex-wrap mt-3">
+              <div
+                class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                ng-click="addSubCategory('Burgers', 990, 2010)"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c74108490c0ec3db9123681b90fa003d"
+                  alt=""
+                />
+                <h6 class="text-dark">Veg Surprise</h6>
+              </div>
+              <div
+                class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c74108490c0ec3db9123681b90fa003d"
+                  alt=""
+                />
+                <h6 class="text-dark">Veg Surprise</h6>
+              </div>
+              <div
+                class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c74108490c0ec3db9123681b90fa003d"
+                  alt=""
+                />
+                <h6 class="text-dark">Veg Surprise</h6>
+              </div>
+              <div
+                class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c74108490c0ec3db9123681b90fa003d"
+                  alt=""
+                />
+                <h6 class="text-dark">Veg Surprise</h6>
+              </div>
+              <div
+                class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/nicellxiu3czfltrniwa"
+                  alt=""
+                />
+                <h6 class="text-dark">Cheesy Fries</h6>
+              </div>
+              <div
+                class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/b85c0086f7d9f52e7921b9825fa0162d"
+                  alt=""
+                />
+                <h6 class="text-dark">Wings</h6>
+              </div>
+              <div
+                class="card1 bg-danger mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/yowiha1jthhpjafnnqld"
+                  alt=""
+                />
+                <h6 class="text-light mt-2">Meals</h6>
+              </div>
+              <div
+                class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/yowiha1jthhpjafnnqld"
+                  alt=""
+                />
+                <h6 class="text-dark mt-2">Meals</h6>
+              </div>
+              <div
+                class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+              >
+                <img
+                  class=""
+                  src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/yowiha1jthhpjafnnqld"
+                  alt=""
+                />
+                <h6 class="text-dark mt-2">Meals</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="containor2KioskPreview w-30 bg-light h-screen"></div> -->
+      </div>
+    </div>
+    <div
+      class="containorSample h-screen bg-danger d-flex w-100 justify-content-center align-items-center"
+    >
+      <div
+        class="innerWrapper w-100 d-flex justify-content-start align-items-center p-3 bg-white containorMiddle flex-column"
+      >
+        <div
+          class="containorMiddle w-100 bg-white justify-content-start align-items-center d-flex"
+        >
+          <div class="categories w-20 bg-light h-screen"></div>
+          <div class="categories w-50">
+            <div class="containorMiddle w-100 p-3 m-auto py-5">
+              <h1
+                class="text-main-heading font-weight-bold text-dark font-size-xxxl text-dark mx-3"
+              >
+                Hey,
+              </h1>
+              <h2 class="kyonkSubHeading text-dark font-size-xxxl mx-3">
+                What's up?
+              </h2>
+
+              <div
+                class="containorCards w-100 d-flex py-3 d-flex flex-wrap mt-3"
+              >
+                <div
+                  class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                  ng-click="addSubCategory('Burgers', 990, 3000)"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c74108490c0ec3db9123681b90fa003d"
+                    alt=""
+                  />
+                  <h6 class="text-dark">Veg Surprise</h6>
+                </div>
+                <div
+                  class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c74108490c0ec3db9123681b90fa003d"
+                    alt=""
+                  />
+                  <h6 class="text-dark">Veg Surprise</h6>
+                </div>
+                <div
+                  class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c74108490c0ec3db9123681b90fa003d"
+                    alt=""
+                  />
+                  <h6 class="text-dark">Veg Surprise</h6>
+                </div>
+                <div
+                  class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c74108490c0ec3db9123681b90fa003d"
+                    alt=""
+                  />
+                  <h6 class="text-dark">Veg Surprise</h6>
+                </div>
+                <div
+                  class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/nicellxiu3czfltrniwa"
+                    alt=""
+                  />
+                  <h6 class="text-dark">Cheesy Fries</h6>
+                </div>
+                <div
+                  class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/b85c0086f7d9f52e7921b9825fa0162d"
+                    alt=""
+                  />
+                  <h6 class="text-dark">Wings</h6>
+                </div>
+                <div
+                  class="card1 bg-danger mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/yowiha1jthhpjafnnqld"
+                    alt=""
+                  />
+                  <h6 class="text-light mt-2">Meals</h6>
+                </div>
+                <div
+                  class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/yowiha1jthhpjafnnqld"
+                    alt=""
+                  />
+                  <h6 class="text-dark mt-2">Meals</h6>
+                </div>
+                <div
+                  class="card1 bg-light mx-3 my-3 d-flex justify-content-center align-items-center flex-column"
+                >
+                  <img
+                    class=""
+                    src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/yowiha1jthhpjafnnqld"
+                    alt=""
+                  />
+                  <h6 class="text-dark mt-2">Meals</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="categories w-30 bg-light h-screen"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,10 @@ myapp.config(function ($stateProvider, $urlRouterProvider) {
       url: "/login",
       templateUrl: "src/pages/login.html",
     })
+    .state("orderCustomer", {
+      url: "/orderCustomer",
+      templateUrl: "src/pages/order.html",
+    })
     .state("signup", {
       url: "/signup",
       templateUrl: "src/pages/signup.html",
@@ -19,10 +23,14 @@ myapp.config(function ($stateProvider, $urlRouterProvider) {
       url: "/users",
       templateUrl: "src/pages/dashboard/user.html",
     })
+    .state("dashboard.foodItems", {
+      url: "/foodItems",
+      templateUrl: "src/pages/dashboard/foodItems.html",
+    })
     .state("dashboard.brands", {
       url: "/brands",
       templateUrl: "src/pages/dashboard/brand.html",
-      })
+    })
     .state("dashboard.campaign", {
       url: "/campaign",
       templateUrl: "src/pages/dashboard/campaign.html",
@@ -39,8 +47,25 @@ myapp.config(function ($stateProvider, $urlRouterProvider) {
       url: "/orders",
       templateUrl: "src/pages/dashboard/orders.html",
     })
-    .state("analytics", {
-      url: "/analytics",
-      templateUrl: "src/pages/analytics.html",
-    });
+    .state("userOrder", {
+      url: "/userOrder",
+      templateUrl: "src/pages/userOrder.html",
+    })
+    .state("dashboard.categories", {
+      url: "/categories",
+      templateUrl: "src/pages/dashboard/category.html",
+    })
+    .state("dashboard.superCategories", {
+      url: "/superCategories",
+      templateUrl: "src/pages/dashboard/superCategories.html",
+    })
+    .state("dashboardBrand", {
+      url: "/dashboardBrand/:brandID",
+      templateUrl: "src/pages/adminBrand/dashboardBrand.html",
+    })
+    .state("dashboardBrand.outlet", {
+      url: "/outlet",
+      templateUrl: "src/pages/adminBrand/outlet.html",
+    })
+    
 });

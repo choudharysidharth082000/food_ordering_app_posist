@@ -2,42 +2,32 @@
 
 const dashboardControllerAdmin = myapp.controller(
   "dashboardControllerAdmin",
-  function ($scope, $http) {
+  function ($scope, $http, userService, $rootScope, serviceuser) {
+    $scope.classChooseEmployeeType = "none";
+    $scope.userName = localStorage.getItem("userName");
     $scope.modalCreate = "Create User";
-    $http
-      .get("http://localhost:3000/v1/api/user/allUsers")
-      .then(function (data) {
+
+    if (localStorage.getItem("userType") === "superadmin") {
+      userService.getAllUsers().then(function (data) {
         console.log(data);
         $scope.users = data.data.Data;
-        $http
-          .get("http://localhost:3000/v1/api/brand/getBrands")
+        //available users to all controllers
+        $rootScope.users = $scope.users;
+        userService
+          .getAllBrands()
           .then(function (data) {
             console.log(data.data.statusCode);
             $scope.brands = data.data.statusCode;
+            $rootScope.rootAllBrands = $scope.brands;
             //now adding the indexes to the brands
-            $scope.brands.forEach((element, index) => {
-              element.index = index;
-            });
+
             console.log($scope.brands);
           })
           .catch(function (error) {
             console.log(error);
           });
-      })
-      .catch(function (error) {
-        console.log(error);
       });
-
-    //creating the brand from the dashboard
-    $scope.createUser = function ($event) {
-      $event.preventDefault();
-      if ($scope.modalCreate == "Create User") {
-        //opening the hdiepassword and confirm password
-        $scope.hidePassword = false;
-        $scope.hideConfirmPassword = false;
-        //removing the elements in teh state
-        //opening the 
-
+      $scope.createUser = function () {
         const userSchema = {
           nameUser: $scope.name,
           email: $scope.email,
@@ -45,92 +35,141 @@ const dashboardControllerAdmin = myapp.controller(
           confirmPassword: $scope.confirmPassword,
           role: "employee",
           mobileNumber: $scope.phoneNumber,
-          userName: $scope.userName,
+          userName: $scope.userNameForm,
         };
-        console.log(userSchema);
-
-        $http
-          .post(
-            "http://localhost:3000/v1/api/auth/signup/" +
-              undefined +
-              "/" +
-              undefined,
-            userSchema
-          )
-          .then(function (data) {
-            console.log(data);
-            //update the user list
-            alert("User is Created Successfully");
-            $http
-              .get("http://localhost:3000/v1/api/user/allUsers")
+        serviceuser.createUser(userSchema).then(function (data) {
+          console.log(data);
+          if (data.data.statusCode == 200) {
+            alert("User created successfully");
+            //fetching the user again gor the updation
+            userService
+              .getAllUsers()
               .then(function (data) {
                 console.log(data);
                 $scope.users = data.data.Data;
-                $http
-                  .get("http://localhost:3000/v1/api/brand/getBrands")
-                  .then(function (data) {
-                    console.log(data.data.statusCode);
-                    $scope.brands = data.data.statusCode;
-                    //now adding the indexes to the brands
-                    $scope.brands.forEach((element, index) => {
-                      element.index = index;
-                    });
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
+                //update the users
+                $rootScope.users = $scope.users;
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          } else {
+            alert("User creation failed");
+          }
+        });
+      };
+    } else if (localStorage.getItem("userType") == "admin") {
+      $scope.classChooseEmployeeType = "block";
+      //available users to all controllers
+      if ($rootScope.userWithBrandID) {
+        console.log("Root Scoped Data");
+        console.log($rootScope.userWithBrandID);
+        $scope.users = $rootScope.userWithBrandID;
+      } else {
+        userService
+          .getUsersByBrandID(localStorage.getItem("brandID"))
+          .then(function (data) {
+            console.log(data);
+            $scope.users = data.data.Data;
+            //available users to all controllers
+            $rootScope.userWithBrandID = $scope.usersWithBrandID;
+            userService
+              .getAllBrands()
+              .then(function (data) {
+                console.log(data.data.statusCode);
+                $scope.brands = data.data.statusCode;
+                $rootScope.rootAllBrands = $scope.brands;
+                //now adding the indexes to the brands
+
+                console.log($scope.brands);
+              })
+              .catch(function (error) {
+                console.log(error);
               });
           })
           .catch(function (error) {
             console.log(error);
           });
-      } else {
-        //hide password and cofirm password
-        $scope.hidePassword = false;
-        $scope.hideConfirmPassword = false;
-        //update the user
-        console.log("Updating the user");
+      }
+    }
+    //function  when the manager is selected
+    $scope.selectManager = function () {
+      $scope.isManagerSelected = true;
+      $scope.isEmployeeSelected = false;
+      console.log($scope.isManagerSelected);
+    };
+    $scope.selectEmployee = function () {
+      $scope.isManagerSelected = false;
+      $scope.isEmployeeSelected = true;
+      console.log($scope.isManagerSelected);
+    };
+
+    //updating the user
+
+    //function for creating the user
+    $scope.createUser = function () {
+      console.log("Create User");
+      if ($scope.modalCreate == "Create User") {
         const userSchema = {
           nameUser: $scope.name,
           email: $scope.email,
+          password: $scope.password,
+          confirmPassword: $scope.confirmPassword,
+          role: "employee",
           mobileNumber: $scope.phoneNumber,
-          userName: $scope.userName,
-          userType: "employee",
+          userName: $scope.userNameForm,
         };
-        console.log(userSchema);
-
-        $http
-          .put(
-            "http://localhost:3000/v1/api/auth/updateUser/" + $scope.userID,
-            userSchema
-          )
-          .then(function (data) {
-            console.log(data);
-            //update the user list
-            alert("User is Updated Successfully");
-            $http
-              .get("http://localhost:3000/v1/api/user/allUsers")
+        serviceuser.createUser(userSchema).then(function (data) {
+          console.log(data);
+          if (data.data.statusCode == 200) {
+            alert("User created successfully");
+            //fetching the user again gor the updation
+            userService
+              .getAllUsers()
               .then(function (data) {
                 console.log(data);
                 $scope.users = data.data.Data;
-                $http
-                  .get("http://localhost:3000/v1/api/brand/getBrands")
-                  .then(function (data) {
-                    console.log(data.data.statusCode);
-                    $scope.brands = data.data.statusCode;
-                    //now adding the indexes to the brands
-                    $scope.brands.forEach((element, index) => {
-                      element.index = index;
-                    });
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
+                //update the users
+                $rootScope.users = $scope.users;
+              })
+              .catch(function (error) {
+                console.log(error);
               });
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+          } else {
+            alert("User creation failed");
+          }
+        });
+      } else {
+        const userSchema = {
+          nameUser: $scope.name,
+          email: $scope.email,
+          password: $scope.password,
+          confirmPassword: $scope.confirmPassword,
+          userType: $scope.isManagerSelected ? "manager" : "employee",
+          mobileNumber: $scope.phoneNumber,
+          userName: $scope.userNameForm,
+        };
+        console.log(userSchema);
+        serviceuser.updateUser(userSchema, $scope.userID).then(function (data) {
+          console.log(data);
+          if (data.data.statusCode == 200) {
+            alert("User updated successfully");
+            //fetching the user again gor the updation
+            userService
+              .getAllUsers()
+              .then(function (data) {
+                console.log(data);
+                $scope.users = data.data.Data;
+                //update the users
+                $rootScope.users = $scope.users;
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          } else {
+            alert("User updation failed");
+          }
+        });
       }
     };
 
@@ -139,7 +178,7 @@ const dashboardControllerAdmin = myapp.controller(
       //adding the values to the scope
       $scope.name = user.name;
       $scope.email = user.emailUser;
-      $scope.userName = user.userName;
+      $scope.userNameForm = user.userName;
       $scope.phoneNumber = user.phoneNumber;
       $scope.userID = user._id;
 
@@ -150,6 +189,3 @@ const dashboardControllerAdmin = myapp.controller(
     };
   }
 );
-
-
-

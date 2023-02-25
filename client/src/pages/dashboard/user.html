@@ -3,9 +3,9 @@
   ng-controller="dashboardControllerAdmin"
 >
   <div class="containorProfileHello w-100 p-3 mx-5 d-flex flex-column">
-    <h2 class="font-weight-medium">Hello Sidharth 👋</h2>
-    <p class="text-muted font-size-md-custom px-2">
-      Last Check your stats today !
+    <h2 class="font-weight-medium">Hello {{userName}} 👋</h2>
+    <p class="text-muted font-size-md-custom">
+      Lets Check your stats today !
     </p>
   </div>
   <div
@@ -221,7 +221,7 @@
             data-bs-whatever="@mdo"
             ng-click="editUser(user)"
           >
-            <th scope="row">{{entry.number}}</th>
+            <th scope="row">{{$index + 1}}</th>
             <td class="text-dark">{{user.name}}</td>
             <td class="text-dark">{{user.emailUser}}</td>
             <td class="text-dark">{{user.phoneNumber}}</td>
@@ -285,7 +285,39 @@
         </div>
         <div class="modal-body">
           <form>
-            <!-- Name, Email , Password, Confirm Password , userType brands select, outlet select, phone number  -->
+            <div class="containor mb-3 my-3" ng-class="classChooseEmployeeType">
+              <!-- Select User type: Manager or Emplyee stylish card -->
+              <p class="text-dark">Select User Type :</p>
+              <div
+                class="wrapper p-2 d-flex justify-content-around align-items-center px-3"
+              >
+                <div
+                  class="cardManager d-flex justify-content-center align-items-center flex-column border p-1"
+                  ng-click="selectManager()"
+                  ng-class="mana"
+                >
+                  <img
+                    class="cardManagerImageInner"
+                    src="https://img.freepik.com/free-vector/modern-productivity-concept-with-flat-design_23-2147970694.jpg?w=826&t=st=1677234492~exp=1677235092~hmac=622c2ea1e29963ae69a3cc7259dd8ea8a2d03dc07f3c7584e9eb5b72af7af126"
+                    alt=""
+                  />
+                  <p class="my-2">Manager</p>
+                </div>
+
+                <div
+                  class="cardManager d-flex justify-content-center align-items-center flex-column border p-1"
+                  ng-click="selectEmployee()"
+                >
+                  <img
+                    class="cardManagerImageInner"
+                    src="https://img.freepik.com/free-vector/choosing-best-candidate-concept_52683-43377.jpg?w=1380&t=st=1677235387~exp=1677235987~hmac=7cc9481ba7a1bf96566ec780c1f8ef24881392c7f855ee847ba112f30edda419"
+                    alt=""
+                  />
+                  <p class="my-2">Employee</p>
+                </div>
+              </div>
+            </div>
+
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Name:</label>
               <input
@@ -338,7 +370,7 @@
               >
               <input
                 type="text"
-                ng-model="userName"
+                ng-model="userNameForm"
                 class="form-control"
                 id="recipient-name"
                 placeholder="sidharth2536"
@@ -356,33 +388,6 @@
                 placeholder="8448605993"
               />
             </div>
-
-            <!-- <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Choose the Owner of the Brand:</label>
-              <select class="form-select" aria-label="Default select example" ng-model="selectedUser" placeholder="Sample">
-                <option selected ng-value="user._id" ng-repeat="user in users">
-                  {{user.name}}
-                </option>
-              </select>
-            </div>             -->
-
-            <!-- <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Brands:</label>
-              <select
-                class="form-select"
-                aria-label="Default select example"
-                ng-model="clickedIndex"
-                placeholder="Sample"
-              >
-                <option
-                  selected
-                  ng-value="brand._id"
-                  ng-repeat="brand in brands"
-                >
-                  {{brand.brandName}}
-                </option>
-              </select>
-            </div> -->
           </form>
         </div>
         <div class="modal-footer">

@@ -3,6 +3,7 @@
 const brandController = myapp.controller(
   "brandController",
   function ($scope, $http) {
+    $scope.userName = localStorage.getItem("userName");
     $http
       .get("http://localhost:3000/v1/api/brand/getBrands")
       .then(function (data) {

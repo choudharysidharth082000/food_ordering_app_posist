@@ -9,11 +9,17 @@
 .w-full {
   width: 100%;
 }
+.block {
+  display: block;
+}
+.none {
+  display: none;
+}
 .border-custom-hard {
   border: 1px solid #000;
 }
-.w-15{
-    width: 18%;
+.w-15 {
+  width: 18%;
 }
 -w-10 {
   width: 10%;
@@ -21,9 +27,8 @@
 .w-20 {
   width: 20%;
 }
-.w-25
-{
-    width: 25%;
+.w-25 {
+  width: 25%;
 }
 .w-30 {
   width: 30%;
@@ -115,8 +120,24 @@
 .font-size-md {
   font-size: 1rem;
 }
-.w-85{
-    width: 85%;
+.font-size-lg {
+  font-size: 1.2rem;
+}
+.font-size-xl {
+  font-size: 1.4rem;
+}
+.font-size-xxl {
+  font-size: 1.6rem;
+}
+.font-size-xxxl {
+  font-size: 100px;
+}
+.font-weight-light {
+  font-weight: 300;
+}
+
+.w-85 {
+  width: 85%;
 }
 .font-size-md-custom {
   font-size: 0.9rem;
@@ -124,10 +145,10 @@
 .font-size-lg {
   font-size: 1.2rem;
 }
-.outline-none{
+.outline-none {
   outline: none;
 }
-.border-none{
+.border-none {
   border: none;
 }
 .font-size-xl {
@@ -163,13 +184,13 @@
 .font-family-tertiary {
   font-family: "Lato", sans-serif;
 }
-.secondCardInfo{
+.secondCardInfo {
   height: 60px;
 }
-.rounded-circle{
+.rounded-circle {
   border-radius: 50%;
 }
-.imageProfile{
+.imageProfile {
   width: 80px;
   height: 80px;
 }
@@ -185,15 +206,15 @@
 .rounded-xl {
   border-radius: 0.8rem;
 }
-.containorSecondDashboard{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    height: 400px;
+.containorSecondDashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 400px;
 }
-.containorFirst{
+.containorFirst {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -203,23 +224,26 @@
   width: 700px;
 }
 
-.containorFirstAnalytics{
+.containorFirstAnalytics {
   height: 300px;
 }
-.containorSecondAnalytics{
+.containorSecondAnalytics {
   height: 305px;
 }
 
-.firstAnalytics, .secondAnalytics, .thirdAnalytics, .fourthAnalytics{
+.firstAnalytics,
+.secondAnalytics,
+.thirdAnalytics,
+.fourthAnalytics {
   height: 130px;
 }
-.containor2{
+.containor2 {
   height: 420px;
 }
-.imageCarousel{
+.imageCarousel {
   height: 280px;
 }
-.simple-Table{
+.simple-Table {
   height: 600px;
   overflow-y: scroll;
 }
@@ -227,5 +251,97 @@
 .simple-Table::-webkit-scrollbar {
   width: 0.5rem;
 }
+.superCategoryCard {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+}
+.categoryInnerImage {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+.card1Kiosk {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+}
+.imageCardKiosk {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
 
+.text-darkGray {
+  color: rgb(85, 79, 79);
+}
 
+.logoImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.flagLanguage {
+  width: 50px;
+
+  height: 50px;
+  object-fit: cover;
+}
+
+.text-main-heading {
+  font-size: 4.5rem;
+  color: #000;
+  /* bold  */
+  font-weight: bolder;
+}
+
+.kyonkSubHeading {
+  font-size: 2.1rem;
+  color: #000;
+  /* bold  */
+  font-weight: 400;
+}
+
+.card1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+.card1 img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.containorCards {
+  overflow-y: scroll;
+  height: 470px;
+}
+/* Hide scrollbar */
+.containorCards::-webkit-scrollbar {
+  display: none;
+}
+.containor2KioskPreview {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.containorMiddle {
+  min-height: 100vh;
+}
+
+.cardManager {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: white;
+
+  transition: all 0.3s ease-in-out;
+}
+.cardManagerImageInner {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 20px;
+}

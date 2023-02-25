@@ -28,9 +28,14 @@
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
     <script defer src="./index.js"></script>
+
+    <script defer src="/src/interceptors/interceptor.js"></script>
     <script defer src="/src/routers/uiRouter.router.js"></script>
     <script defer src="/src/contollers/mainController.controller.js"></script>
     <script defer src="src/contollers/adminController.controller.js"></script>
+
+    <script defer src="/src/configs/configURLProvider.config.js"></script>
+    <script defer src="/src/providers/UserService.provider.js"></script>
     <script defer src="/src/services/auth.service.js"></script>
     <script
       defer
@@ -40,6 +45,16 @@
     <script defer src="/src/contollers/dashboard/brands.controller.js"></script>
 
     <script defer src="/src/contollers/dashboard/outlet.controller.js"></script>
+    <script
+      defer
+      src="/src/contollers/foodOrderController.controller.js"
+    ></script>
+    <script defer src="/src/services/user/user.service.js"></script>
+    <script defer src="/src/services/brand/brand.service.js"></script>
+    <script defer src="/src/contollers/userOrder.controller.js"></script>
+    <script defer src="/src/contollers/superCategory.controller.js"></script>
+    <script defer src="/src/contollers/category.controller.js"></script>
+    <script defer src="/src/contollers/foodItems.controller.js"></script>
   </head>
   <body class="bg-light position-relative" ng-controller="mainController">
     <div ui-view></div>

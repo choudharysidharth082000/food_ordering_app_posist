@@ -1,0 +1,62 @@
+<div
+  class="mainDashBoard w-80 bg-light h-screen d-flex justify-content-start align-items-start mt-4 flex-column"
+  ng-controller="superCategoryController"
+>
+  <div class="containorProfileHello w-100 p-3 mx-5 d-flex flex-column">
+    <h2 class="font-weight-medium">Hello {{userName}} 👋</h2>
+    <p class="text-muted font-size-md-custom px-2">
+      Last Check your stats today !
+    </p>
+  </div>
+
+  <div class="containorShowCategories w-full mx-5 p-1">
+    <div
+      class="containorSuperCategories w-100 rounded-sm shadow-sm p-1 d-flex justify-content-start align-items-center flex-wrap cursor-pointer"
+    >
+      <div
+        class="superCategoryCard rounded-sm shadow-sm d-flex justify-content-center align-items-center m-3 flex-column"
+      >
+        <img
+          class="categoryInnerImage my-1"
+          src="https://thumbs.dreamstime.com/b/indian-food-1962643.jpg"
+          alt=""
+        />
+        <h6 class="text-dark">North Indian</h6>
+      </div>
+
+      <div
+        class="superCategoryCard rounded-sm shadow-sm d-flex justify-content-center align-items-center m-3 flex-column"
+      >
+        <!-- rounded Photo -->
+        <img
+          class="categoryInnerImage my-1"
+          src="https://dil-rjcorp.com/wp-content/uploads/2021/06/idli-platter_with-coffee.png"
+          alt=""
+        />
+        <h6 class="text-dark">South Indian</h6>
+      </div>
+      <div
+        class="superCategoryCard rounded-sm shadow-sm d-flex justify-content-center align-items-center m-3 flex-column"
+      >
+        <!-- rounded Photo -->
+        <img
+          class="categoryInnerImage my-1"
+          src="https://www.charleys.com/wp-content/uploads/2021/10/1200x800_category_philly-cheesesteak_provolone_charleys-best-1024x683.jpg"
+          alt=""
+        />
+        <h6 class="text-dark">Italian</h6>
+      </div>
+
+      <div
+        class="superCategoryCard rounded-sm shadow-sm d-flex justify-content-center align-items-center m-3"
+      >
+        <!-- rounded Photo -->
+      </div>
+      <div
+        class="superCategoryCard rounded-sm shadow-sm d-flex justify-content-center align-items-center m-3"
+      >
+        <!-- rounded Photo -->
+      </div>
+    </div>
+  </div>
+</div>

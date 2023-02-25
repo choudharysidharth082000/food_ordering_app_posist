@@ -13,24 +13,45 @@ const dashboardController = myapp.controller(
       },
       {
         number: 1,
-        name: "Products",
-        link: "dashboard.products",
+        name: "Users",
+        link: "dashboard.users",
+        isActive: false,
+        icon: "fa-solid fa-user-circle",
+      },
+      {
+        number: 2,
+        name: "Outlets",
+        link: "dashboard.outlet",
         isActive: false,
         icon: "fa-solid fa-cart-shopping",
       },
       {
-        number: 2,
-        name: "Orders",
-        link: "/dashboard/orders",
+        number: 3,
+        name: "Sub Categories",
+        link: "/dashboard/subCategories",
         isActive: false,
         icon: "fa-solid fa-cash-register",
       },
       {
-        number: 3,
-        name: "Outlet",
-        link: "dashboard.outlet",
+        number: 4,
+        name: "Categories",
+        link: "dashboard.categories",
+        isActive: false,
+        icon: "fa-solid fa-shopping",
+      },
+      {
+        number: 5,
+        name: "Food Items",
+        link: "dashboard.foodItems",
         isActive: false,
         icon: "fa-solid fa-store",
+      },
+      {
+        number: 6,
+        name: "Customers",
+        link: "dashboard.customers",
+        isActive: false,
+        icon: "fa-solid fa-user",
       },
     ];
 
@@ -59,15 +80,15 @@ const dashboardController = myapp.controller(
       },
       {
         number: 3,
-        name: "Orders",
-        link: "/dashboard/orders",
+        name: "Super Categories",
+        link: "dashboard.superCategories",
         isActive: false,
         icon: "fa-solid fa-cash-register",
       },
       {
         number: 4,
         name: "Categories",
-        link: "/dashboard/categories",
+        link: "dashboard.categories",
         isActive: false,
         icon: "fa-solid fa-cart-shopping",
       },
@@ -78,14 +99,27 @@ const dashboardController = myapp.controller(
         isActive: false,
         icon: "fa-solid fa-store",
       },
-      
+      {
+        number: 6,
+        name: "Food Items",
+        link: "dashboard.foodItems",
+        isActive: false,
+        icon: "fa-solid fa-store",
+      },
     ];
     console.log(localStorage.getItem("token"));
     //checking the login
+    $scope.logout = function () {
+      console.log("Hello world");
+      localStorage.removeItem("token");
+      localStorage.removeItem("userType");
+      window.location.href = "#/login";
+    };
+
     if (localStorage.getItem("token") === null) {
       window.location.href = "#/login";
     }
-    if (localStorage.getItem("token") === "superadmin") {
+    if (localStorage.getItem("userType") === "superadmin") {
       $scope.navbar = $scope.admin;
       console.log($scope.navbar);
     } else {
@@ -109,11 +143,6 @@ const dashboardController = myapp.controller(
         element.isActive = false;
       });
       $scope.navbar[index].isActive = true;
-    };
-
-    $scope.logout = function () {
-      localStorage.clear();
-      window.location.href = "#/login";
     };
   }
 );
